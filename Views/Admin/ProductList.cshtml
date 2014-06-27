@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+             
+@*  <form method="post" action="~/Admin/UpdateProduct"> 
+      <table border="1">
+         <tr>
+            <td><h3>Product</h3></td><td><h3>Title</h3></td><td><h3>Price</h3></td><td><h3>Description</h3></td><td><h3>Update</h3></td>
+         </tr>
+
+         @foreach (var x in Model)
+            {
+               <tr>
+                  <td><img src="~/images/@x.Imageurl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                  <td><h4>@x.Title</h4></td>
+                  <td><h4>@x.Price</h4></td>
+                  <td><h4>@x.Discription</h4></td>
+                          
+                  <td><a href="~/Admin/UpdateProduct/@x.Id"><button type="button" class="btn btn-primary" > Update </button></a></td>
+                          
+               </tr>
+            }
+
+      </table>   
+
+  </form>*@
+
+
+<table class="table">
+     
+     <thead>
+          <tr> <th><h2>Product Image</h2></th> <th><h2>Title</h2></th><th><h2>Price</h2></th><th><h2>Description</h2></th> </tr>
+
+     </thead>
+    @foreach (var x in Model)
+    {
+     <tbody>
+          <tr>
+               <td><img src="~/images/@x.Imageurl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                  <td><h4>@x.Title</h4></td>
+                  <td><h4>@x.Price</h4></td>
+                  <td><h4>@x.Discription</h4></td>
+                          
+                  <td><a href="~/Admin/UpdateProduct/@x.Id"><button type="button" class="btn btn-primary" > Update </button></a></td>
+                  
+          </tr>
+          
+     </tbody>
+    }
+</table>

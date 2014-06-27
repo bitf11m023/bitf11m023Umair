@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = null ;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+    <style>
+        body {
+                background-color:lightgray;
+             }
+    </style>
+</head>
+<body>
+
+      <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="~/Home/Index">E-Shop</a>
+
+          </div>
+          <div>
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="/Home">Home</a></li>
+                  <li><a href="~/About/AboutUs">About Us</a></li>
+                  <li><a href="https://www.facebook.com/umair.arif.568?ref=tn_tnmn">Contact Us</a></li>
+                  
+              </ul>
+              <ul class="nav navbar-nav navbar-left pull-right">
+                  <li><a href="~/Account/Signup">Signup</a></li>
+                  <li><a href="~/Account/Login">Login</a></li>
+              </ul>
+              <form class="navbar-form navbar-left pull-right" role="search">
+                  <div class="form-group">
+                      
+                      <input type="text" class="form-control" placeholder="Search" />
+                      
+                  </div>
+                  <button type="submit" class="btn btn-info">Search</button>
+
+             </form>
+          </div>
+      </nav>
+   	
+
+
+
+
+
+
+	
+    <div class="row">
+          <div class="col-md-1">
+        </div>
+        <div class="col-xs-4">
+
+ <img src="~/images/@Model.Imageurl" class="img-thumbnail" style="height:300px; width:300px" alt="MyPic" />
+   
+    
+        </div>
+
+        <div class="col-xs-3">
+             <h2>Product Detail</h2><br /><br /><br />
+             
+              <b>Title :&nbsp&nbsp</b>@Model.Title<br />
+              <b>Product Id :&nbsp</b>@Model.Id<br />
+              <b>Price :&nbsp</b>@Model.Price<br />
+              <b>Description :&nbsp</b>@Model.Discription<br /><br />
+              <a href="/Home/Cart/@Model.Id" class="btn btn-default" role="button">Add To Cart</a>
+        </div>
+
+    </div>
+
+
+
+
+ <footer class="modal-footer">Copy Rights</footer>
+    
+  
+   
+</body>
+</html>

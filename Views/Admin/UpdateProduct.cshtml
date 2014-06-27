@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-1">
+              
+         </div>
+          
+         <div class="col-xs-10">
+
+             <form action="~/Admin/Save_Update/@Model.Id" method="post">
+              <table class="table">
+
+                  <thead>
+                      <tr> <th><h2>Product Image</h2></th> <th><h2>Title</h2></th><th><h2>Price</h2></th><th><h2>Description</h2></th> </tr>
+                  </thead>
+                       <tbody>
+                        <tr>
+                        <td><img src="~/images/@Model.Imageurl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                        <td><input type="text" class="form-control" name="t1" value="@Model.Title" /></td>
+                        <td><input type="text" class="form-control" name="p1" value="@Model.Price" /></td>
+                        <td><input type="text" class="form-control" name="d1" value="@Model.Discription" /></td>
+                            
+                        <td><input type="Submit" class="btn btn-primary" value="Update" /></td>
+                  
+                        </tr>
+          
+                       </tbody>
+
+                  
+
+              </table>
+                 </form>
+         </div>
+     

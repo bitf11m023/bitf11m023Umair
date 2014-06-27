@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Women";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      left:'250px',
+      height:'+=150px',
+      width:'+=150px'
+    });
+  });
+});
+</script>
+
+<h1>Womens</h1>
+               <ul class="nav nav-tabs">
+                    <li><a href="/Home">New Arrival</a></li>
+                    <li><a href="/Home/Men">Men</a></li>
+                    <li  class="active"><a href="/Home/Women">Women</a></li>
+                    <li><a href="/Home/Kids">Kids</a></li>
+                    <li><a href="/Home/Watches">Watches</a></li>
+                    <li><a href="/Home/Bags">Bags</a></li>
+                    <li><a href="/Home/Glassis">Glasses</a></li>
+               </ul><br /><br />
+ 
+
+
+@{
+    MvcApplication3.Models.Database1Entities3 db = new MvcApplication3.Models.Database1Entities3();
+ }
+
+@using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+{
+    <div>
+     @foreach (var item in @Model)
+        {
+         <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <a href="/Home/Detail/@item.Id"><img src="~/images/@item.Imageurl" class="img-thumbnail" style="height:300px; width:300px" alt="MyPic" /></a>
+          <a href="/Home/Detail/@item.Id" class="btn btn-primary" role="button">   View Detail   </a>
+                    <a href="/Home/Cart/@item.Id" class="btn btn-default" role="button">   Add To Cart   </a>
+  
+          </div>
+          <div class="caption">
+               
+               
+
+          </div>
+             </div>
+        }
+        
+     </div> 
+           
+
+}

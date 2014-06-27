@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+        
+
+<h2>Admin DashBoard</h2><hr /><br /><br />
+
+        <div class="col-xs-4">
+            <a href="~/Admin/Upload"><button type="button" class="btn btn-default btn-lg btn-block"> Add New Product </button></a>
+            <a href="~/Admin/ShowAll"><button type="button" class="btn btn-default btn-lg btn-block"> View All Products </button></a>
+            <a href="~/Admin/ProductList"><button type="button" class="btn btn-default btn-lg btn-block"> Update Existing Product </button></a>
+            <a href="~/Admin/ProductList1"><button type="button" class="btn btn-default btn-lg btn-block"> Delete Product </button></a>
+        
+        </div>
+
+        <div class="col-xs-6">
+            @* <a href="~/Admin/ProductList"><button type="button" class="btn btn-default btn-lg btn-block"> Update Existing Product </button></a><br />
+            <a href="~/Admin/ProductList1"><button type="button" class="btn btn-default btn-lg btn-block"> Delete Product </button></a><br />*@
+            
+            <h2>Welcome Admin</h2>
+            <p>You can perform Different operation over here.</p>
+            <ul>
+            <li>In Order to Upload new Product Click on Add New Product.</li>
+            <li>In Order to View All Products Click on View All Product. </li>
+            <li>In Order to Update Your Existing Product Click on Update Existing Product.</li>
+            <li>In Order to Delete Products Click on Delete Product. </li>
+            
+            </ul>
+        </div>
+            

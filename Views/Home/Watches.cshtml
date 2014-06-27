@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Watches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    MvcApplication3.Models.Database1Entities3 db = new MvcApplication3.Models.Database1Entities3();
+ }
+
+
+
+
+<h1>Watches</h1>
+               <ul class="nav nav-tabs">
+                    <li><a href="/Home">New Arrival</a></li>
+                    <li><a href="/Home/Men">Men</a></li>
+                    <li><a href="/Home/Women">Women</a></li>
+                    <li><a href="/Home/Kids">Kids</a></li>
+                    <li class="active"><a href="/Home/Watches">Watches</a></li>
+                    <li><a href="/Home/Bags">Bags</a></li>
+                    <li><a href="/Home/Glassis">Glasses</a></li>
+               </ul><br /><br />
+
+
+
+@using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+{
+    <div>
+     @foreach (var item in @Model)
+        {
+         
+            <div class="col-sm-6 col-md-3">
+               <div class="thumbnail">
+                   <a href="/Home/Detail/@item.Id"><img src="~/images/@item.Imageurl" class="img-thumbnail" style="height:300px; width:300px" alt="MyPic" /></a>
+               </div>
+               <div class="caption">
+                   <p> <a href="/Home/Detail/@item.Id" class="btn btn-primary" role="button"> View Detail </a>
+                   <a href="/Home/Cart/@item.Id" class="btn btn-default" role="button"> Add To Cart </a>
+
+                   </p>
+                   </div>
+               </div>
+           
+        }
+        
+     </div> 
+           
+
+}

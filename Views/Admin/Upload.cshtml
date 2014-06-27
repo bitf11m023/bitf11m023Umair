@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+        <div class="col-xs-5">
+
+
+  <h2>Upload New Product</h2><hr />
+        
+  <form action="/Admin/FileUpload" method="post" enctype="multipart/form-data" >
+    Title<br />
+    <input type="text" name="t1" class="form-control" required="required" /> <br />
+    Price<br />
+    <input type="text" name="p1" class="form-control" required="required" /> <br />
+    Discription<br />
+    <input type="text" name="d1" class="form-control" required="required" /> <br />  
+    Catagory<br />
+    <select name="op" class="form-control" required="required">
+        <option value="0">--- Select Catagory ---</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Kids">Kids</option>
+        <option value="Watches">Watches</option>
+        <option value="Glasses">Glasses</option>
+        <option value="Bags">Bags</option>
+    </select><br />
+   @*<input type="text" name="c1" class="form-control" required="required" /> <br />*@
+    Select Image<br />
+    <input type="file" name="file" id="file" required="required" style="width: 100%;" />
+    <input type="submit" value="Upload" class="btn btn-info pull-right" />
+</form>
+            </div>
+
+
+   @* <footer class="modal-footer">Copy Rights</footer>*@
+       

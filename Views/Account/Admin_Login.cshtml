@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Admin_Login";
+    Layout = null;
+}
+
+@model MvcApplication3.Models.Admin
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+     <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+    <style>
+    body {
+            background-color:lightgray;
+         }
+    </style>
+
+  </head>
+
+<body>
+
+      <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="~/Home/Index">E-Shop</a>
+
+          </div>
+          <div>
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="/Home">Home</a></li>
+                  <li><a href="~/About/AboutUs">About Us</a></li>
+                  <li><a href="https://www.facebook.com/umair.arif.568?ref=tn_tnmn">Contact Us</a></li>
+                  
+              </ul>
+              <ul class="nav navbar-nav navbar-left pull-right">
+                  <li><a href="~/Account/Signup">Signup</a></li>
+                  <li><a href="~/Account/Login">Login</a></li>
+              </ul>
+              <form class="navbar-form navbar-left pull-right" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search" />
+                      
+                  </div>
+                  <button type="submit" class="btn btn-info">Search</button>
+
+             </form>
+          </div>
+      </nav>
+    
+     <div class="container" style="width:600; height:600">
+	    <legend>Login As Admin</legend>
+	        <div class="well"> 
+	                <legend>Admin Login</legend>
+
+                     @using (Html.BeginForm("Admin_varify", "Account",FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+            
+                     
+                         <div class="editor-label">
+                            @Html.LabelFor(model => model.Email)
+                         </div>
+                         <div class="editor-field">
+                            @Html.TextBoxFor(model => model.Email, new {@placeholder="Enter Email", @required="required", @class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Email)
+                         </div>
+                         
+                         <div class="editor-label">
+
+                            @Html.LabelFor(model => model.Password)
+                         </div>
+                         <div class="editor-field">
+                            @Html.TextBoxFor(model => model.Password, new {@placeholder="Enter Password", @required="required", @type="password" , @class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Password)
+                         </div>
+                         
+                         <button type="submit" class="btn btn-primary pull-right" >Login</button> 
+                     }
+	 
+                <br />
+	        </div>
+     </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <footer class="modal-footer">Copy Rights</footer>
+
+
+    </body>
+
+ </html>

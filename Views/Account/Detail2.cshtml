@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Detail2";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+    <style>
+        body {
+                background-color:lightgray;
+             }
+    </style>
+
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                var title = $("#search").val();
+                $.getJSON("/Account/Search?title=" + title, function (data) {
+                    if (data == false) {
+                        alert("Product Not Found");
+                    }
+                    else {
+                        var url = '/Account/Detail2?title=' + data.Title + '&price=' + data.Price + '&des=' + data.Discription + '&img=' + data.Imageurl;
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+      <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="~/Home/Index">E-Shop</a>
+
+          </div>
+          <div>
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="/Home">Home</a></li>
+                  <li><a href="~/About/AboutUs">About Us</a></li>
+                  <li><a href="https://www.facebook.com/umair.arif.568?ref=tn_tnmn">Contact Us</a></li>
+                  
+              </ul>
+              <ul class="nav navbar-nav navbar-left pull-right">
+                  <li><a href="~/Account/Signup">Signup</a></li>
+                  <li><a href="~/Account/Login">Login</a></li>
+              </ul>
+              <div class="navbar-form navbar-left pull-right" role="search">
+                  <div class="form-group">
+                      
+                      <input type="text" class="form-control" id="search" name="search" placeholder="Search" />
+                      
+                  </div>
+                  <input type="button" id="b1" name="b1" value="Search" class="btn btn-info"/>
+
+             </div>
+          </div>
+      </nav>
+   	
+
+
+
+
+
+
+	
+    <div class="row">
+          <div class="col-md-1">
+        </div>
+        <div class="col-xs-4">
+
+ <img src="~/images/@ViewBag.image" class="img-thumbnail" style="height:300px; width:300px" alt="MyPic" />
+   
+    
+        </div>
+
+        <div class="col-xs-3">
+             <h2>Product Detail</h2><br /><br /><br />
+             
+              <b>Title :&nbsp&nbsp</b>@ViewBag.title<br />
+              <b>Price :&nbsp</b>@ViewBag.price<br />
+              <b>Description :&nbsp</b>@ViewBag.des<br /><br />
+              <button type="button" class="btn btn-default">Add To Cart</button>
+             @* <a href="/Home/Cart/@Model.Id" class="btn btn-default" role="button">Add To Cart</a>*@
+        </div>
+
+    </div>
+
+
+
+
+ <footer class="modal-footer">Copy Rights</footer>
+    
+  
+   
+</body>
+</html>
